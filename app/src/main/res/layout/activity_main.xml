@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2B2B2B"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber0"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:adjustViewBounds="true"
+        android:background="#00FFFFFF"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_0" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDot"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber0"
+        app:srcCompat="@drawable/calculator_point" />
+
+    <ImageButton
+        android:id="@+id/imageButtonEqual"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonDot"
+        app:srcCompat="@drawable/calculator_equals" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:adjustViewBounds="true"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_1" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonDot"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber1"
+        app:srcCompat="@drawable/calculator_2" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonEqual"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber2"
+        app:srcCompat="@drawable/calculator_3" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_4" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber5"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber2"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber4"
+        app:srcCompat="@drawable/calculator_5" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber6"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber3"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber5"
+        app:srcCompat="@drawable/calculator_6" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber7"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_7" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber8"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber5"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber7"
+        app:srcCompat="@drawable/calculator_8" />
+
+    <ImageButton
+        android:id="@+id/imageButtonNumber9"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber6"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber8"
+        app:srcCompat="@drawable/calculator_9" />
+
+    <ImageButton
+        android:id="@+id/imageButtonClear"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/calculator_reset" />
+
+    <ImageButton
+        android:id="@+id/imageButtonChangeSign"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber8"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonClear"
+        app:srcCompat="@drawable/calculator_changesign" />
+
+    <ImageButton
+        android:id="@+id/imageButtonPercent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonNumber9"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonChangeSign"
+        app:srcCompat="@drawable/calculator_percent" />
+
+    <ImageButton
+        android:id="@+id/imageButtonPlus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonEqual"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonEqual"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber3"
+        app:srcCompat="@drawable/calculator_plus" />
+
+    <ImageButton
+        android:id="@+id/imageButtonMinus"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonPlus"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber6"
+        app:srcCompat="@drawable/calculator_minus" />
+
+    <ImageButton
+        android:id="@+id/imageButtonTimes"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonMinus"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonNumber9"
+        app:srcCompat="@drawable/calculator_times" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDivide"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ffffff"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonTimes"
+        app:layout_constraintStart_toEndOf="@+id/imageButtonPercent"
+        app:srcCompat="@drawable/calculator_divide" />
+
+    <TextView
+        android:id="@+id/viewResult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/imageButtonChangeSign"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+</android.support.constraint.ConstraintLayout>
