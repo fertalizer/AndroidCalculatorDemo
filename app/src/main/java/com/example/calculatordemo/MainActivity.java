@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    String result = "0";
-
     private TextView mExpressionTextView;
     private TextView mAnswerTextView;
+
+    private String firstNumberString = "0";
+    private String secondNumberString = "0";
+    private int calculateIndex = 0;
 
     private ImageButton mImageButtonNumber0, mImageButtonNumber1, mImageButtonNumber2, mImageButtonNumber3,
                         mImageButtonNumber4, mImageButtonNumber5, mImageButtonNumber6, mImageButtonNumber7,
@@ -19,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton mImageButtonDot, mImageButtonEqual, mImageButtonClear, mImageButtonChangeSign,
                         mImageButtonPercent,mImageButtonPlus, mImageButtonMinus, mImageButtonTimes,
                         mImageButtonDivide;
-//    private boolean mFlag = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mExpressionTextView = (TextView) findViewById(R.id.expressionTextView);
         mExpressionTextView.setText("0");
         mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
+        mAnswerTextView.setText("0");
 
         mImageButtonNumber0 = (ImageButton) findViewById(R.id.imageButtonNumber0);
         mImageButtonNumber1 = (ImageButton) findViewById(R.id.imageButtonNumber1);
@@ -206,7 +210,129 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mExpressionTextView.setText("0");
+                mAnswerTextView.setText("0");
             }
         });
+
+        mImageButtonPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String operator = "+";
+                String expressionString = mExpressionTextView.getText().toString();
+//                mExpressionTextView.setText(expressionString + operator);
+
+                Calculate(0, expressionString);
+
+            }
+        });
+
+        mImageButtonMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String operator = "-";
+                String expressionString = mExpressionTextView.getText().toString();
+//                mExpressionTextView.setText(expressionString + operator);
+
+                Calculate(1, expressionString);
+            }
+        });
+
+        mImageButtonTimes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String operator = "×";
+                String expressionString = mExpressionTextView.getText().toString();
+//                mExpressionTextView.setText(expressionString + operator);
+
+                Calculate(2, expressionString);
+            }
+        });
+
+        mImageButtonDivide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                String operator = "÷";
+                String expressionString = mExpressionTextView.getText().toString();
+//                mExpressionTextView.setText(expressionString + operator);
+
+                Calculate(3, expressionString);
+            }
+        });
+
+        mImageButtonEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String expressionString = mExpressionTextView.getText().toString();
+                Calculate(4, expressionString);
+
+            }
+        });
+
     }
+
+    private void Calculate(int calculateType, String  calculateNumber) {
+        double result;
+        String answer;
+
+
+        switch (calculateType) {
+            case 0:
+                firstNumberString = calculateNumber;
+                calculateIndex = 0;
+                mExpressionTextView.setText("");
+                break;
+            case 1:
+                firstNumberString = calculateNumber;
+                calculateIndex = 1;
+                mExpressionTextView.setText("");
+                break;
+            case 2:
+                firstNumberString = calculateNumber;
+                calculateIndex = 2;
+                mExpressionTextView.setText("");
+                break;
+            case 3:
+                firstNumberString = calculateNumber;
+                calculateIndex = 3;
+                mExpressionTextView.setText("");
+                break;
+            case 4:
+                secondNumberString = mExpressionTextView.getText().toString();
+                double firstNumber = Double.valueOf(firstNumberString);
+                double secondNumber = Double.valueOf(secondNumberString);
+
+                switch (calculateIndex) {
+                    case 0:
+                        result = firstNumber + secondNumber;
+                        answer = Double.toString(result);
+                        mAnswerTextView.setText(answer);
+                        break;
+                    case 1:
+                        result = firstNumber - secondNumber;
+                        answer = Double.toString(result);
+                        mAnswerTextView.setText(answer);
+                        break;
+                    case 2:
+                        result = firstNumber * secondNumber;
+                        answer = Double.toString(result);
+                        mAnswerTextView.setText(answer);
+                        break;
+                    case 3:
+                        if(secondNumber == 0) {
+                            Toast.makeText(this, "Can't be divided by 0",Toast.LENGTH_SHORT).show();
+                            break;
+                        }
+                        result = firstNumber / secondNumber;
+                        answer = Double.toString(result);
+                        mAnswerTextView.setText(answer);
+                        break;
+                }
+                break;
+        }
+
+
+    }
+
+
+
 }

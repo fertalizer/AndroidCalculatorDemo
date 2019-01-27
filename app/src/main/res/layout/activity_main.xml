@@ -226,6 +226,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/darker_gray"
+        android:textSize="40sp"
+        android:gravity="right"
         app:layout_constraintBottom_toTopOf="@+id/imageButtonChangeSign"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
