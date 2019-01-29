@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "Invalid calculation :(",Toast.LENGTH_SHORT).show();
                     break;
                 }
-
+                
                 double firstNumber = Double.valueOf(firstNumberString);
                 double secondNumber = Double.valueOf(secondNumberString);
 
