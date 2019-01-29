@@ -206,6 +206,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mImageButtonDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String number = ".";
+                String expressionString = mExpressionTextView.getText().toString();
+                mExpressionTextView.setText(expressionString + number);
+            }
+        });
+
         mImageButtonClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -298,6 +307,15 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 4:
                 secondNumberString = mExpressionTextView.getText().toString();
+
+                int checkDotNumber1 = checkDot(firstNumberString);
+                int checkDotNumber2 = checkDot(secondNumberString);
+
+                if(firstNumberString.equals("") || secondNumberString.equals("") || checkDotNumber1 > 1 || checkDotNumber2 > 1) {
+                    Toast.makeText(this, "Invalid calculation :(",Toast.LENGTH_SHORT).show();
+                    break;
+                }
+
                 double firstNumber = Double.valueOf(firstNumberString);
                 double secondNumber = Double.valueOf(secondNumberString);
 
@@ -333,6 +351,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public int checkDot(String string) {
+        int index = 0;
+        int dotNumberCount = 0;
+        String dot =".";
 
-
+        while((index = string.indexOf(dot, index)) != -1) {
+            index += dot.length();
+            dotNumberCount++;
+        }
+        return dotNumberCount;
+    }
 }
